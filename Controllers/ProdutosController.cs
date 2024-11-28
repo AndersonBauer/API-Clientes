@@ -38,7 +38,7 @@ public class ProdutosController : ControllerBase
     [HttpPut("{id}")]
     public ActionResult Put(int id, Produto produtoAtualizado)
     {
-        var produtoEncontrado = _repository.GetById(id);
+        var produtoEncontrado = _repository.Put(id, produtoAtualizado);
         
         if(produtoEncontrado == null)
             return NotFound();
